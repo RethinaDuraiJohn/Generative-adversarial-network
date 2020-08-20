@@ -1,0 +1,176 @@
+<html>
+<html>
+<head>
+  <div class="jumbotron" style="background-color: #072F5F; height: 160px ";>
+
+          <font size="15" color="white" align="center"><center><br>GAME OF CLONES<br></center></font>
+
+  </div>  <header class="bg-primary text-white">
+
+      
+  </header>
+    <title>Index</title>
+    <style>
+* {
+  box-sizing: border-box;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+input.largerCheckbox { 
+            width: 90px; 
+            height: 90px; 
+        } 
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+.container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+
+label {
+  border: 1px solid #eee3ff;
+  padding: 10px;
+/*  filter: blur(4px);
+*/  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label::before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+#search {
+    width: 6em;  height: 3em;
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked+label {
+  border-color: #ddd;
+}
+
+:checked+label::before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked+label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}        
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ -->
+<body background="https://st3.depositphotos.com/3271841/16157/i/1600depositphotos_161577012-stock-photo-blue-old-master-style-photography.jpg">
+	<form action = "http://localhost:5000/result" method="post">
+    <p><br><br><br></p>
+    <center>ENTER YOUR NAME : <input name="text" size="40"></center>
+    <p><br><br><br></p>
+
+<div class="row">
+  <div class="column">
+<!--     <p><br><br></p>
+ -->      {% for user in kusers %}
+
+      <!--  <img src="{{user}}" height="200" width="200">
+       <p><br></p> -->
+      <input type="checkbox"  disabled="true" name="{{user}}"/><label style = " height: 100px width: 100px" ><img src="{{user}}" ></label>
+          {% endfor %}
+  </div>
+  <div class="column">
+      {% for user in users %}
+
+     
+<input type="checkbox" id="{{user}}" name="{{user}}"/><label for="{{user}}"><img src="{{user}}" ></label>
+          {% endfor %}
+  </div>
+  <div class="column">
+      {% for user in fusers %}
+ 
+
+<input type="checkbox" id="{{user}}" name="{{user}}"/><label for="{{user}}"><img src="{{user}}"></label>
+
+          {% endfor %}
+
+  </div>
+</div>
+<p><br><br><br><br></p>
+<div style="text-align:center">  
+            <input type="submit" id="search" value="Submit" class="search"/>
+          </div>
+
+<p><br><br><br><br><br><br><br><br></p>
+    </form>
+
+		  
+
+
+	
+       <!--  <b style="text-transform:uppercase; font-size:25px">Disease Name:</b><span class="causes0"></span></p>
+ <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"> -->
+
+</body>
+</html>
+
+		

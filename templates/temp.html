@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<center><h1>RESULTS</h1></center>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: justify;
+}
+</style>
+<center>
+<table style="width:50%" >
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+  </tr>
+{% for item in data %}
+<tr>
+    <td>{{item[0]}}</td>
+    <td>{{item[1]}}</td>
+</tr>
+{% endfor %}
+
+
+</table>
+</center>
+</html>
